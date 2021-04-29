@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="promedio"></p>
+    <p id="lista"></p>
+
+    <script>
+        const promedio = document.getElementById('promedio');
+        const lista = document.getElementById('lista');
+        let suma = 0;
+        let numeros = [];
+
+        for(let i = 0; i < 6; i++){
+            n = parseInt(prompt(`Ingrese un numero para el indice ${i+1}/6`));
+
+            if(n > 20) {
+                suma += n;
+                numeros.push(n);
+            }
+        }
+
+        if(suma > 0) {
+            promedio.innerHTML = `El promedio de los numeros > 20 es ${suma/6}`;
+            lista.innerHTML = `Los numeros >20 fueron ${numeros}`;100
+        }
+        else
+            promedio.innerHTML = 'No se ingresaron numeros mayores a 20';
+    </script>
+</body>
+</html>

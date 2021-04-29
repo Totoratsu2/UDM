@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="lista"></p>
+        <br/>
+        <p id="mayor"></p>
+        <p id="numero"></p>
+        <p id="promedio"></p>
+        <p id="suma_par"></p>
+
+        <script>
+            const mayor = document.getElementById('mayor');
+            const promedio = document.getElementById('promedio');
+            const numero = document.getElementById('numero');
+            const lista = document.getElementById('lista');
+            const suma_par = document.getElementById('suma_par');
+
+            const edades = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
+            const edad = parseInt(prompt("Ingresar edad a buscar: "));
+            let max = 0;
+            let sum = 0;
+            let sum_par = 0;
+
+            for(let i=0; i< edades.length; i++){
+                if(edades[i]===edad)
+                    numero.innerHTML = `La edad ${edad} si existe en el arrreglo`;
+
+                if(edades[i]>max)
+                    max=edades[i];
+                
+                if(edades[i]%2==0)
+                    sum_par += edades[i];
+
+                sum += edades[i];
+            }
+
+            mayor.innerHTML = `La mayor edad es ${max}`;
+            promedio.innerHTML = `El promedio de edades es ${sum/edades.length}`;
+            lista.innerHTML = edades;
+            suma_par.innerHTML = sum_par;
+        </script>
+    </body>
+</html>

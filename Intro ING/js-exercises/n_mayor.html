@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="menor"></p>
+        <p id="mayor"></p>
+        <p id="numero"></p>
+
+        <script>
+        const menor = document.getElementById('menor');
+        const mayor = document.getElementById('mayor');
+        const numero = document.getElementById('numero');
+
+        const n_buscar = parseInt(prompt('Ingrese el numero a buscar'));
+        let n_menor = 0;
+        let n_mayor = 0;
+
+        for(let i=0; i<5; i++) {
+            n = parseInt(prompt(`Ingrese un numero para el indice ${i}/5`));
+
+            if(n_buscar===n)
+                numero.innerHTML = `El numero ${n_buscar} fue encontrado`;
+            
+            if(i===0){
+                n_menor=n;
+                n_mayor=n;
+            }
+            else{
+                if(n<n_menor)
+                    n_menor=n;
+                else if(n>n_mayor)
+                    n_mayor=n;
+            }
+        }
+
+        menor.innerHTML = `El numero menor es ${n_menor}`;
+        mayor.innerHTML = `El numero mayor es ${n_mayor}`;
+    </script>
+    </body>
+</html>

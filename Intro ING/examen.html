@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="pares"></p>
+    <p id="impares"></p>
+    <p id="lista"></p>
+
+    <!-- 
+        4. Diseñe un script que genere 5 números aleatorios de dos cifras que sume los impares,
+        que multiplique los pares, y que muestre los resultados.
+     -->
+
+    <script>
+        const pares = document.getElementById('pares');
+        const impares = document.getElementById('impares');
+        const lista = document.getElementById('lista');
+
+        let suma = 0;
+        let multi = 1;
+        let numeros = [];
+
+        for(let i = 0; i < 5; i++) {
+            let numero = Math.floor(Math.random() * (99 - 10 + 1) + 10);
+            numeros.push(numero);
+
+            if(numero % 2 == 0)
+                multi *= numero;
+            else
+                suma += numero;
+        }
+
+        pares.innerHTML = `La suma de los impares es: ${suma}`;
+        impares.innerHTML = `La multiplicación de los pares es: ${multi}`;
+        lista.innerHTML = `Los numeros fueron ${numeros}`;
+    </script>
+</body>
+</html>
